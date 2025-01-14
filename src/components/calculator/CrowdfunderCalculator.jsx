@@ -240,8 +240,7 @@ const CrowdfunderCalculator = () => {
               {wimdInfo && (
                 <div className="sw-results">
                   <p className="font-semibold">
-                    Your area ranks {wimdInfo.rank} out of {wimdInfo.total} in Wales
-                    (top {wimdInfo.percentile}%)
+                    Your area ranks in the top {wimdInfo.percentile}% of Welsh index of multiple deprivation (WIMD)
                     {wimdInfo.isDeprived && 
                       " - Eligible for up to 50% match funding"
                     }
@@ -255,9 +254,9 @@ const CrowdfunderCalculator = () => {
               <label className="sw-label">
                 Is your project aimed at any of the following groups? Please tick:
               </label>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {targetGroups.map((group) => (
-                  <div key={group.id} className={`flex items-center space-x-3 ${group.id === 'none' ? 'pt-4' : ''}`}>
+                  <div key={group.id} className={`flex items-center space-x-3 `}>
                     <input
                       type="checkbox"
                       id={group.id}

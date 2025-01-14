@@ -12,7 +12,7 @@ const CrowdfunderCalculator = () => {
 
   
   // UI state management
-  const [calculationMode, setCalculationMode] = useState('total'); // 'total' or 'target'
+  const [calculationMode, setCalculationMode] = useState('total'); 
   const [wimdInfo, setWimdInfo] = useState(null);
 
   const targetGroups = [
