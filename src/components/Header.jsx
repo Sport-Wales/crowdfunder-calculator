@@ -30,7 +30,7 @@ const Header = () => {
 
             <div className="hidden md:flex items-center space-x-8">
               <span className="text-lg font-medium text-[--color-sw-blue] px-1">
-                Crowdfunder Calculator  
+              Cyfrifiannell Cyllido Torfol | Crowdfunder Calculator
               </span>
             </div>
           </div>

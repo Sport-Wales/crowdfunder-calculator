@@ -173,7 +173,7 @@ const CrowdfunderCalculator = () => {
         {/* Header */}
         <div className="sw-header">
           <h2 className="sw-heading-primary">A Place for Sport - Funding Calculator</h2>
-          <p className="mt-2 text-lg">Calculate potential match funding for your community sports project, Through the crowdfunder platform</p>
+          <p className="mt-2 text-lg">Calculate potential match funding for your community sports project, through the Crowdfunder platform</p>
         </div>
   
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-8">
@@ -228,7 +228,7 @@ const CrowdfunderCalculator = () => {
                 id="postcode"
                 type="text"
                 value={postcode}
-                onChange={(e) => setPostcode(e.target.value.toUpperCase())}
+                onChange={(e) => setPostcode(e.target.value)}
                 className="sw-input w-full uppercase"
                 placeholder="Enter postcode"
               />

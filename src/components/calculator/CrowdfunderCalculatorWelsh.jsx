@@ -232,7 +232,7 @@ const CrowdfunderCalculator = () => {
                   id="postcode"
                   type="text"
                   value={postcode}
-                  onChange={(e) => setPostcode(e.target.value.toUpperCase())}
+                  onChange={(e) => setPostcode(e.target.value)}
                   className="sw-input w-full uppercase"
                   placeholder="Rhowch god post"
                 />
