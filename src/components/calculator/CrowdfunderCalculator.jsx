@@ -384,7 +384,7 @@ const CrowdfunderCalculator = () => {
                 <li className='pt-2'>• Supporting priority groups: 40% match funding</li>
                 <li className='pt-2'>• Top 30% WIMD areas: 50% match funding</li>
                 <li className='pt-2'>• Maximum pledge: £15,000</li>
-                <li className='pt-2'>• Minimum project cost: £300</li>
+                <li className='pt-2'>• Minimum award: £300</li>
               </ul>
             </div>
             <div className="sw-sidebar-card">

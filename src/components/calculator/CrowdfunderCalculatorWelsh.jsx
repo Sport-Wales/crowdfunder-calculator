@@ -397,7 +397,7 @@ const CrowdfunderCalculator = () => {
                   <li className='pt-2'>• Cefnogi grwpiau blaenoriaeth: 40% o gyllid cyfatebol</li>
                   <li className='pt-2'>• Ardaloedd MALlC 30% uchaf: 50% o gyllid cyfatebol</li>
                   <li className='pt-2'>• Uchafswm cyfraniad: £15,000</li>
-                  <li className='pt-2'>• Isafswm cost prosiect: £300</li>
+                  <li className='pt-2'>• Isafswm cyfraniad: £300</li>
                 </ul>
               </div>
       
