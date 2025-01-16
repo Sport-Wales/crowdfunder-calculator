@@ -16,22 +16,19 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200">
-      <div className="mx-auto px-4 sm:px-6 lg:px-1">
+    <nav className="sw-bg-red py-4 border-b border-gray-200">
+      <div className="mx-auto px-8 sm:px-8 lg:px-1">
         <div className="flex px-10 justify-between h-16">
           <div className="flex items-stretch space-x-8">
             <div className="flex-shrink-0 flex items-center space-x-3">
-              <div className="flex flex-col">
-                <span className="text-2xl font-semibold text-[--color-sw-blue]">
-                  Sport Wales
-                </span>
-              </div>
+             <img src="/sport_wales _logo_white.png" alt="Sport Wales Logo" className="h-12 w-auto sm:h-16 md:h-20 lg:h-24" />
+      
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <span className="text-lg font-medium text-[--color-sw-blue] px-1">
+            <span className="text-m font-semibold text-white px-1">
               Cyfrifiannell Cyllido Torfol | Crowdfunder Calculator
-              </span>
+            </span>
             </div>
           </div>
 

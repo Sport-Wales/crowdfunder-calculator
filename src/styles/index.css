@@ -211,7 +211,7 @@
 
   /* Header Components */
   .sw-header {
-    @apply sw-bg-red text-white p-6;
+    @apply sw-bg-blue text-white p-6;
   }
 
   .sw-heading-primary {

@@ -175,7 +175,7 @@ const CrowdfunderCalculator = () => {
     return (
         <div className="sw-container sw-card">
           {/* Header */}
-          <div className="sw-header">
+          <div className="sw-header rounded-t-lg">
             <h2 className="sw-heading-primary">Cyfrifiannell Codi Arian Chwaraeon Cymru</h2>
             <p className="mt-2 text-lg">Cyfrifwch gyllid cyfatebol posibl ar gyfer eich prosiect chwaraeon cymunedol</p>
           </div>

@@ -171,7 +171,7 @@ const CrowdfunderCalculator = () => {
     return (
       <div className="sw-container sw-card">
         {/* Header */}
-        <div className="sw-header">
+        <div className="sw-header rounded-t-lg">
           <h2 className="sw-heading-primary">A Place for Sport - Funding Calculator</h2>
           <p className="mt-2 text-lg">Calculate potential match funding for your community sports project, through the Crowdfunder platform</p>
         </div>
