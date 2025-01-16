@@ -21,14 +21,15 @@ const Header = () => {
         <div className="flex px-10 justify-between h-16">
           <div className="flex items-stretch space-x-8">
             <div className="flex-shrink-0 flex items-center space-x-3">
-             <img src="/sport_wales _logo_white.png" alt="Sport Wales Logo" className="h-12 w-auto sm:h-16 md:h-20 lg:h-24" />
-      
+              <a href="https://www.sport.wales/">
+                <img src="/sport_wales_logo_white.png" alt="Sport Wales Logo" className="h-12 w-auto sm:h-16 md:h-20 lg:h-24" />
+              </a>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-            <span className="text-m font-semibold text-white px-1">
-              Cyfrifiannell Cyllido Torfol | Crowdfunder Calculator
-            </span>
+              <span className="text-m font-semibold text-white px-1">
+                Cyfrifiannell Cyllido Torfol | Crowdfunder Calculator
+              </span>
             </div>
           </div>
 
