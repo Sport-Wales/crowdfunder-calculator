@@ -345,7 +345,7 @@ const CrowdfunderCalculator = () => {
                    : null }
                     </p>
                     <p className="text-lg">
-                      Mae hyn yn cynrychioli {fundingPercentage}% o gost eich prosiect
+                        Mae hyn yn cynrychioli cyfraniad o hyd at {fundingPercentage}% o gost eich prosiect
                     </p>
                     <div className="sw-highlight">
                       <p className="text-lg">
