@@ -325,10 +325,15 @@ const CrowdfunderCalculator = () => {
                 </p>
                 <div className="space-y-4">
                   <p className="text-lg">
-                    Sport Wales could pledge up to: 
+                    Sport Wales could pledge up to:
                     <span className="font-lg text-2xl ml-2">
                       £{pledgeAmount.toLocaleString('en-GB', { maximumFractionDigits: 2 })}
                     </span>
+                    {pledgeAmount == 15000 ? 
+                      <span className="text-base ml-2">
+                        - this is the maximum amount Sport Wales can pledge
+                      </span>
+                   : null }
                   </p>
                   <p className="text-lg">
                     This represents {fundingPercentage}% of your project cost

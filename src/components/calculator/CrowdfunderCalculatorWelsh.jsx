@@ -338,6 +338,11 @@ const CrowdfunderCalculator = () => {
                       <span className="font-lg text-2xl ml-2">
                         £{pledgeAmount.toLocaleString('en-GB', { maximumFractionDigits: 2 })}
                       </span>
+                      {pledgeAmount == 15000 ? 
+                        <span className="text-base ml-2">
+                          - dyma'r uchafswm y gall Chwaraeon Cymru ei addo
+                        </span>
+                   : null }
                     </p>
                     <p className="text-lg">
                       Mae hyn yn cynrychioli {fundingPercentage}% o gost eich prosiect
