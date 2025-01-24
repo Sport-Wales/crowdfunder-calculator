@@ -21,6 +21,11 @@ This calculator helps sports clubs and organisations in Wales:
 - Responsive design
 - Sport Wales brand compliant
 
+## Deployment
+
+The site is currently [live](https://crowdfunder-calculator.netlify.app/).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f68af9e9-887b-4e8a-87fe-c8c926d23e62/deploy-status)](https://app.netlify.com/sites/crowdfunder-calculator/deploys)
 
 ## Quick Start
 
