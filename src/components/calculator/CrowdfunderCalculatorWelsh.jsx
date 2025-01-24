@@ -270,7 +270,7 @@ const CrowdfunderCalculator = () => {
 								{ id: 'ethnic', label: 'Pobl o Leiafrifoedd Ethnig' },
 								{ id: 'none', label: 'Dim un o\'r uchod' }
 							].map((group) => (
-								<div key={group.id} className={`flex items-center space-x-3 ${group.id === 'none' ? 'pt-4' : ''}`}>
+								<div key={group.id} className={`flex items-center space-x-3 `}>
 									<input
 										type="checkbox"
 										id={group.id}
