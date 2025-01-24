@@ -7,22 +7,22 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Calculator = () => {
-  const location = useLocation();
-  const isWelsh = location.pathname.includes('/cy');
+	const location = useLocation();
+	const isWelsh = location.pathname.includes('/cy');
 
-  return (
-    <div>
-      <Header />
-      <div className="container mx-auto py-8 px-4">
-        {isWelsh ? (
-          <CrowdfunderCalculatorWelsh />
-        ) : (
-          <CrowdfunderCalculator />
-        )}
-      </div>
-      <Footer/>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<div className="container mx-auto py-8 px-4">
+				{isWelsh ? (
+					<CrowdfunderCalculatorWelsh />
+				) : (
+					<CrowdfunderCalculator />
+				)}
+			</div>
+			<Footer />
+		</div>
+	);
 };
 
 export default Calculator;
