@@ -17,9 +17,9 @@ const CrowdfunderCalculator = () => {
 	const targetGroups = [
 		{ id: 'women', label: 'Women & Girls' },
 		{ id: 'disabled', label: 'Disabled People' },
-		{ id: 'young', label: 'Young People' },
+		// { id: 'young', label: 'Young People' },
 		{ id: 'lgbtqia', label: 'LGBTQIA+ People' },
-		{ id: 'elderly', label: 'Elderly People' },
+		// { id: 'elderly', label: 'Elderly People' },
 		{ id: 'ethnic', label: 'Ethnic Minority People' },
 		{ id: 'none', label: 'None of the above' }
 	];

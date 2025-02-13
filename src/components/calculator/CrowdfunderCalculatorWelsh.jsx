@@ -17,8 +17,8 @@ const CrowdfunderCalculator = () => {
 
 	const targetGroups = [
 		{ id: 'women', label: 'Women & Girls' },
-		{ id: 'disabled', label: 'Disabled People' },
-		{ id: 'young', label: 'Young People' },
+		// { id: 'disabled', label: 'Disabled People' },
+		// { id: 'young', label: 'Young People' },
 		{ id: 'lgbtqia', label: 'LGBTQIA+ People' },
 		{ id: 'elderly', label: 'Elderly People' },
 		{ id: 'ethnic', label: 'Ethnic Minority People' },
@@ -264,9 +264,9 @@ const CrowdfunderCalculator = () => {
 							{[
 								{ id: 'women', label: 'Menywod a Merched' },
 								{ id: 'disabled', label: 'Pobl Anabl' },
-								{ id: 'young', label: 'Pobl Ifanc' },
+								// { id: 'young', label: 'Pobl Ifanc' },
 								{ id: 'lgbtqia', label: 'Pobl LHDTC+' },
-								{ id: 'elderly', label: 'Pobl Hŷn' },
+								// { id: 'elderly', label: 'Pobl Hŷn' },
 								{ id: 'ethnic', label: 'Pobl o Leiafrifoedd Ethnig' },
 								{ id: 'none', label: 'Dim un o\'r uchod' }
 							].map((group) => (
