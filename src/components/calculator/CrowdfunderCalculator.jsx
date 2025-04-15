@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { isInDeprivedArea, validateWelshPostcode, getWIMDRank } from '../../utils/wimd';
 
+
 const CrowdfunderCalculator = () => {
 	// Core state management
 	const [postcode, setPostcode] = useState('');
@@ -34,36 +35,35 @@ const CrowdfunderCalculator = () => {
 			newErrors.postcode = 'Please enter a valid Welsh postcode';
 		}
 
+		// Within validateInputs function, update the percentage logic
 		if (!amount) {
 			newErrors.amount = `Please enter ${calculationMode === 'total' ? 'total project cost' : 'target amount'}`;
 		} else {
 			const value = parseFloat(amount);
 			if (value < 300) {
-				newErrors.amount = `Minimum ${calculationMode === 'total' ? 'Sport Wales will pledge' : 'target amount'} is £300`;
+			newErrors.amount = `Minimum ${calculationMode === 'total' ? 'Sport Wales will pledge' : 'target amount'} is £300`;
 			} else {
-				// Calculate potential pledge based on percentage
-				let percentage = 30; // Base percentage
-				if (isInDeprivedArea(postcode)) {
-					percentage = 50;
-				} else if (selectedGroups.length > 0 && !selectedGroups.includes('none')) {
-					percentage = 40;
-				}
-
-				let potentialPledge;
-				if (calculationMode === 'total') {
-					potentialPledge = (value * percentage) / 100;
-				} else {
-					potentialPledge = (value * percentage) / (100 - percentage);
-				}
-
-				// Check if potential pledge meets minimum requirement
-				if (potentialPledge < 300) {
-					const minRequired = Math.ceil((300 * 100) / percentage);
-					newErrors.amount = `To receive minimum Sport Wales Funding (£300), you need to ${calculationMode === 'total'
-							? `have a total project cost of at least £${minRequired}`
-							: `raise at least £${minRequired}`
-						}`;
-				}
+			// Calculate potential pledge based on percentage
+			let percentage = 50; // Updated base percentage
+			if (isInDeprivedArea(postcode) || (selectedGroups.length > 0 && !selectedGroups.includes('none'))) {
+				percentage = 60; // Updated percentage for priority groups and deprived areas
+			}
+		
+			let potentialPledge;
+			if (calculationMode === 'total') {
+				potentialPledge = (value * percentage) / 100;
+			} else {
+				potentialPledge = (value * percentage) / (100 - percentage);
+			}
+		
+			// Check if potential pledge meets minimum requirement
+			if (potentialPledge < 300) {
+				const minRequired = Math.ceil((300 * 100) / percentage);
+				newErrors.amount = `To receive minimum Sport Wales Funding (£300), you need to ${calculationMode === 'total'
+					? `have a total project cost of at least £${minRequired}`
+					: `raise at least £${minRequired}`
+				}`;
+			}
 			}
 		}
 
@@ -78,26 +78,24 @@ const CrowdfunderCalculator = () => {
 	// Calculate funding based on mode
 	const calculateFunding = () => {
 		if (!validateInputs()) return;
-
-		let percentage = 30; // Base percentage
-
-		if (isInDeprivedArea(postcode)) {
-			percentage = 50;
-		} else if (selectedGroups.length > 0 && !selectedGroups.includes('none')) {
-			percentage = 40;
+	
+		let percentage = 50; // Base percentage updated from 30% to 50%
+	
+		if (isInDeprivedArea(postcode) || (selectedGroups.length > 0 && !selectedGroups.includes('none'))) {
+		percentage = 60; // Updated from 40%/50% to a flat 60% for both priority groups and deprived areas
 		}
-
+	
 		setFundingPercentage(percentage);
-
+	
 		const value = parseFloat(amount);
 		let calculatedPledge;
-
+	
 		if (calculationMode === 'total') {
-			calculatedPledge = (value * percentage) / 100;
+		calculatedPledge = (value * percentage) / 100;
 		} else {
-			calculatedPledge = (value * percentage) / (100 - percentage);
+		calculatedPledge = (value * percentage) / (100 - percentage);
 		}
-
+	
 		calculatedPledge = Math.min(calculatedPledge, 15000);
 		setPledgeAmount(calculatedPledge);
 	};
@@ -145,8 +143,9 @@ const CrowdfunderCalculator = () => {
 		if (value <= 5000) return 25;
 		if (value <= 10000) return 50;
 		if (value <= 15000) return 75;
+		if (value <= 100000) return 100; 
 		return 100;
-	};
+	  };
 
 	// Effects
 	useEffect(() => {
@@ -247,7 +246,7 @@ const CrowdfunderCalculator = () => {
 								<p className="font-semibold">
 									Your area ranks in the top {wimdInfo.percentile}% of Welsh index of multiple deprivation (WIMD)
 									{wimdInfo.isDeprived &&
-										" - Eligible for up to 50% match funding"
+										" - Eligible for up to 60% match funding"
 									}
 								</p>
 							</div>
@@ -340,7 +339,7 @@ const CrowdfunderCalculator = () => {
 								{/* Unique Supporters */}
 								<div className="bg-white bg-opacity-10 p-4 rounded-lg">
 									<p className="text-lg pb-2 ">
-										Required Unique Supporters:  <span className='pl-2 font-semibold'>{getRequiredSupporters(targetAmount)} </span>
+										Required Unique Supporters:  <span className='pl-2 font-semibold'>{getRequiredSupporters(totalProjectValue)} </span>
 									</p>
 									<p className="text-sm mt-1">
 										This is the minimum number of different people who need to support your project
@@ -397,19 +396,19 @@ const CrowdfunderCalculator = () => {
 							>
 								Welsh Index of Multiple Deprivation (WIMD)
 							</a> helps determine funding levels.
-							Projects in more deprived areas (top 30%) may receive up to 50% match funding.
+							Projects in more deprived areas (top 30%) may receive up to 60% match funding.
 						</p>
 					</div>
 
 					<div className="sw-sidebar-card">
-						<h3 className="sw-heading-secondary">Funding Levels</h3>
-						<ul className="text-[--color-sw-blue] space-y-2">
-							<li className='pt-2'>• Base level: 30% match funding</li>
-							<li className='pt-2'>• Supporting priority groups: 40% match funding</li>
-							<li className='pt-2'>• Top 30% WIMD areas: 50% match funding</li>
-							<li className='pt-2'>• Maximum pledge: £15,000</li>
-							<li className='pt-2'>• Minimum award: £300</li>
-						</ul>
+					<h3 className="sw-heading-secondary">Funding Levels</h3>
+					<ul className="text-[--color-sw-blue] space-y-2">
+						<li className='pt-2'>• Base level: 50% match funding</li>
+						<li className='pt-2'>• Supporting priority groups: 60% match funding</li>
+						<li className='pt-2'>• Top 30% WIMD areas: 60% match funding</li>
+						<li className='pt-2'>• Maximum pledge: £15,000</li>
+						<li className='pt-2'>• Minimum award: £300</li>
+					</ul>
 					</div>
 					<div className="sw-sidebar-card">
 						<h3 className="sw-heading-secondary">Required Supporters</h3>
