@@ -381,7 +381,7 @@ const CrowdfunderCalculator = () => {
 							>
 								Crowdfunder
 							</a>  is a platform that helps you raise money from your community.
-							Sport Wales will match up to 50% of your fundraising target, depending on your location and project goals.
+							Sport Wales will match up to 60% of your fundraising target, depending on your location and project goals.
 						</p>
 					</div>
 
