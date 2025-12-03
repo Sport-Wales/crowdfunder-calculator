@@ -389,7 +389,7 @@ const CrowdfunderCalculator = () => {
 						<h3 className="sw-heading-secondary">About WIMD</h3>
 						<p className="text-[--color-sw-blue]">
 							The <a
-								href="https://statswales.gov.wales/Catalogue/Community-Safety-and-Social-Inclusion/Welsh-Index-of-Multiple-Deprivation"
+								href="https://www.gov.wales/welsh-index-multiple-deprivation-2025"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-blue-700 underline hover:no-underline"
